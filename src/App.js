@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './components/Header'
-import Player from './components/Player'
+
 import Addplayer from './components/Addplayer';
 import Playerlist from './components/Playerlist';
 import './App.css';
@@ -42,7 +42,7 @@ class App extends React.Component {
     this.setState((prevState)=>{
 
       const updatedPlayer = [...prevState.player];
-      const newPlayer = {...updatedPlayer[index-1]};
+
       
       
       // console.log(updatedPlayer);
