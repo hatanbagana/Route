@@ -1,16 +1,31 @@
-import React from 'react';
-import { NavLink} from 'react-router-dom'
+import React from 'react'
+import Stopwatch from './Stopwatch';
+import Stats from './Stats';
+function Header(props) {
+  // console.log(props.player);
+  let players = props.players;
 
-const Header = () => (
-  <header>
-    <span className="icn-logo"><i className="material-icons">code</i></span>
-    <ul className="main-nav">
-      <li><NavLink to='/'>Home</NavLink></li>
-      <li><NavLink to='/about'>About</NavLink></li>
-      <li><NavLink to='/teachers'>Teachers</NavLink></li>
-      <li><NavLink to='/courses'>Courses</NavLink></li>
-    </ul>    
-  </header>
-);
+  // let c = 0
+  let totalScore =  players.reduce((a, players) => a + players.score, 0)
 
-export default Header;
+  // console.log(c);
+
+
+
+    return (
+      <header>
+        <Stats totalPlayer = {props.totalPlayer}
+        totalScore = {totalScore}/>
+        {/* <div className="stats">
+
+        <span > Total players: {props.totalPlayer}</span>
+        <span > Total score: {props.totalScore()}</span>
+        </div> */}
+        <h1>{props.title}</h1>
+        <Stopwatch />
+        
+      </header>
+    );
+  }
+
+export default Header
